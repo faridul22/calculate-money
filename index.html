@@ -28,61 +28,132 @@
     <header>
     </header>
 
-    <main class="border-1">
-        <section class="container-fluid m-5">
+    <main class="m-5">
+        <section class="container">
             <!-- Title -->
             <h1 class="d-flex justify-content-center text-info m-4">Calculate Money <span class="text-warning"><i
-                        class="fas fa-hand-holding-usd"></i></span></h1>
+                        class="fas fa-hand-holding-usd"></i></span>
+            </h1>
             <!-- Money calculate picture -->
             <div class="row">
                 <div class="col-lg-6 col-md-12">
-                    <img width="100%" src="images/calculate-picture.jpg" class="img-fluid" alt="">
+                    <img width="100%" src="images/calculate-picture.jpg" class="" alt="">
                 </div>
-                <!-- Calculate part -->
+                <!-- Calculation part -->
                 <div class="col-lg-6 col-md-12 bg-light pt-4">
                     <!-- Income -->
                     <h4 class="text-center m-4 fw-bold">Income</h4>
                     <div class="d-flex justify-content-center">
                         <h6 class="me-2 mt-2">Income:</h6>
-                        <input class="me-4 p-2 border-0 bg-success bg-opacity-10 rounded-1" type="text" value="10000">
+                        <input id="income-input" class="me-4 p-2 border-0 bg-success bg-opacity-10 rounded-1"
+                            type="text" value="10000">
                     </div>
                     <!-- Expenses -->
                     <h4 class="text-center m-4 fw-bold">Expenses</h4>
                     <div class="">
                         <div class="d-flex justify-content-center m-4">
                             <h6 class="me-2 mt-2">Food:</h6>
-                            <input class="border-0 bg-success bg-opacity-10 rounded-1 p-2" type="text" value="3000">
+                            <input id="food-input" class="border-0 bg-success bg-opacity-10 rounded-1 p-2" type="text"
+                                value="3000">
                         </div>
+
                         <div class="d-flex justify-content-center m-4">
                             <h6 class="me-2 mt-2">Rent:</h6>
-                            <input class="border-0 bg-success bg-opacity-10 rounded-1 p-2" type="text" value="2000">
+                            <input id="rent-input" class="border-0 bg-success bg-opacity-10 rounded-1 p-2" type="text"
+                                value="2000">
                         </div>
+
                         <div class="d-flex justify-content-center me-4 mt-3">
                             <h6 class="me-2 mt-2">Clothes:</h6>
-                            <input class="border-0 bg-success bg-opacity-10 rounded-1 p-2" type="text" value="500">
+                            <input id="clothes-input" class="border-0 bg-success bg-opacity-10 rounded-1 p-2"
+                                type="text" value="500">
                         </div>
+                        <!--string error message -->
+                        <small id="income-stringError" class="text-center ms-5 text-danger mt-0">Please enter a number
+                            in
+                            the <u>Income field</u>
+                        </small>
+                        <small id="food-stringError" class="text-center ms-5 text-danger mt-0">Please enter a number in
+                            the
+                            <u>Food field</u>
+                        </small>
+                        <small id="rent-stringError" class="text-center ms-5 text-danger mt-0">Please enter a number in
+                            the
+                            <u>Rent field</u>
+                        </small>
+                        <small id="clothes-stringError" class="text-center ms-5 text-danger">Please enter a number in
+                            the
+                            <u>Clothes field</u>
+                        </small>
+
+                        <!-- negative number error -->
+                        <small id="income-negativeError" class="text-center ms-5 text-danger">Sorry,you entered a
+                            negative
+                            number in the
+                            <u>Income field</u>.
+                            negative number don't allow.Please enter a positive number
+                        </small>
+                        <small id="food-negativeError" class="text-center ms-5 text-danger">Sorry,you entered a negative
+                            number in the
+                            <u>Food field</u>.
+                            negative number don't allow.Please enter a positive number
+                        </small>
+                        <small id="rent-negativeError" class="text-center ms-5 text-danger">Sorry,you entered a negative
+                            number in the
+                            <u>Rent field</u>.
+                            negative number don't allow.Please enter a positive number
+                        </small>
+                        <small id="clothes-negativeError" class="text-center ms-5 text-danger">Sorry,you entered a
+                            negative
+                            number in the
+                            <u>Clothes field</u>.
+                            negative number don't allow.Please enter a positive number
+                        </small>
+                        <!-- insufficient balance erro -->
+                        <small id="expense-insufficient" class="text-center ms-5 text-danger">You don't have sufficient
+                            balance</small>
                     </div>
                     <!-- Calculate -->
                     <div class="d-flex align-item-center m-3">
-                        <button class="mx-auto border-0 py-2 px-3 rounded-1 bg-info text-white">Calculate</button>
+                        <button id="calculate-btn"
+                            class="mx-auto border-0 py-2 px-3 rounded-1 bg-info text-white">Calculate</button>
                     </div>
                     <div class="text-center mt-4">
-                        <h4 class="fw-bold">Total Expenses: 5500</h4>
-                        <h4 class="fw-bold">Balance: 4500</h4>
+                        <h4 class="fw-bold">Total Expenses: <span id="total-expenses">5500</span></h4>
+                        <h4 class="fw-bold">Balance: <span id="balance">4500</span></h4>
                     </div>
                     <!-- Saving -->
                     <div class="d-flex justify-content-center mt-4">
                         <h6 class="mt-2 me-2">save:</h6>
-                        <input class="w-25 border-0 bg-success bg-opacity-10 rounded-1 p-2" type="text" value="20">
+                        <input id="save-input" class="w-25 border-0 bg-success bg-opacity-10 rounded-1 p-2" type="text"
+                            value="20">
                         <span class="mt-2 mx-3 fw-bold">%</span>
-                        <button class="border-0 py-1 px-5  rounded-1 bg-info text-white">Save</button>
+                        <button id="saving-btn" class="border-0 py-1 px-5  rounded-1 bg-info text-white">Save</button>
                     </div>
+
+                    <small id="save-insufficient" class="text-center ms-5 text-danger">Sorry,You don't have enough
+                        Balance to
+                        save
+                        money
+                    </small>
+                    <!-- string or negative number error -->
+                    <small id="save-stringError" class="text-center ms-5 text-danger">Please enter a number to save
+                        field
+                    </small>
+                    <small id="save-negativeError" class="text-center ms-5 text-danger">Sorry,You can't take a negative
+                        number in the <u>saving field</u> to save
+                        money.please enter a positive number to save money
+                    </small>
+                    <!--Result after Saving -->
                     <div class="text-center mt-4">
-                        <h4 class="m-3 fw-bold">Saving Amount: 2000</h4>
-                        <h4 class="m-3 fw-bold">Remaining Balance: 2500</h4>
+                        <h4 class="m-3 fw-bold">Saving Amount: <span id="saving-amount">2000</span>
+                        </h4>
+
+                        <h4 class="m-3 fw-bold">Remaining Balance: <span id="remaining-balance">2500</span></h4>
                     </div>
                 </div>
             </div>
+
             <hr>
         </section>
 

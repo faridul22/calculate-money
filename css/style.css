@@ -1,4 +1,21 @@
+/* google font */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Playfair Display', serif;
     font-family: 'Poppins', sans-serif;
+
 }
+
+main {
+    border: 4px solid lightslategray;
+    border-bottom-width: 0px;
+}
+
+small {
+    display: none;
+}
+
+/* @media screen {} */
