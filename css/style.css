@@ -1,8 +1,8 @@
-/* google font */
 * {
     box-sizing: border-box;
 }
 
+/* google font */
 body {
     font-family: 'Playfair Display', serif;
     font-family: 'Poppins', sans-serif;
@@ -18,7 +18,7 @@ small {
     display: none;
 }
 
-/* Responsive */
+/* Mobile Responsive */
 @media screen and (max-width: 576px) {
     h1 {
         font-size: 20px;
@@ -52,7 +52,7 @@ small {
 
     #saving-part h6 {
         font-size: 13px;
-        margin-left: 4px;
+        margin-left: 1px;
     }
 
     #saving-part input {
@@ -69,26 +69,57 @@ small {
         font-size: 12px;
     }
 
-    #saving-part h6 {
-        margin-left: 0px !important;
-    }
-
+    /* saving percent( % ) sign */
     #percent {
         margin: 5px !important;
         font-weight: 500 !important;
         font-size: 15px;
+    }
+}
 
+/* Desktop Responsive */
+@media screen and (min-width:1024px) {
+    #expenses-part h4 {
+        font-size: 25px;
+        margin: 10px !important;
     }
 
+    #expenses-part h6 {
+        font-size: 20px;
+        margin-left: 8px;
+    }
 
+    #expenses-part input {
+        font-size: 20px;
+        height: 50px;
+    }
 
+    #calc-part {
+        margin-top: 0px !important;
+        padding-bottom: 40px;
+        height: auto;
+    }
 
+    #saving-part h4 {
+        font-size: 25px;
+        margin: 0px !important;
+    }
 
+    #saving-part h6 {
+        font-size: 20px;
+        margin-left: 8px;
+    }
 
+    #saving-part input {
+        width: 20px;
+        height: 45px;
+        font-size: 20px;
+    }
 
-
-
-    small {
-        font-size: 10px;
+    #saving-part button {
+        height: 45px;
+        width: 115px;
+        font-size: 20px;
+        padding-left: 35px !important;
     }
 }
