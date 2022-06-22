@@ -22,6 +22,7 @@ function getError(inputId, errorType, balance) {
         insufficientBalance.style.display = 'none';
         negativeNumError.style.display = 'none';
         stringError.style.display = 'block';
+
     }
     else {
         stringError.style.display = 'none';
